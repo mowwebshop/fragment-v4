@@ -61,7 +61,7 @@ app.get('/', (req, res) => {
   }
   code, .mono, textarea, input{ font-family:'JetBrains Mono', ui-monospace, monospace; }
 
-  .wrap{ max-width: 920px; margin:0 auto; padding: 56px 24px 90px; }
+  .wrap{ max-width: 1180px; margin:0 auto; padding: 56px 24px 90px; }
 
   .hero{ display:flex; align-items:flex-start; justify-content:space-between; gap: 30px; margin-bottom: 30px; }
   .hero .eyebrow{ color: var(--teal); font-size:12px; letter-spacing:0.18em; text-transform:uppercase; font-weight:600; }
@@ -75,7 +75,14 @@ app.get('/', (req, res) => {
   .waveform .bar{ width:6px; background: linear-gradient(180deg, var(--teal), var(--teal-dim)); border-radius:2px 2px 0 0; }
   .waveform .bar.alt{ background: linear-gradient(180deg, var(--violet), #3F4173); }
 
-  .grid{ display:grid; grid-template-columns: 1fr; gap: 22px; }
+  .grid{ display:grid; grid-template-columns: 1fr 1fr; gap: 22px; align-items:start; }
+
+  @media (max-width: 760px){
+    .wrap{ padding: 40px 18px 70px; }
+    .grid{ grid-template-columns: 1fr; }
+    .hero{ flex-direction:column; }
+    .waveform{ min-width:0; }
+  }
 
   .card{
     background: linear-gradient(180deg, var(--panel), var(--panel-2));
